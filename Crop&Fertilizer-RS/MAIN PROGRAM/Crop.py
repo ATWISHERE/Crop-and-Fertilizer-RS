@@ -12,7 +12,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 # Loading The Dataset
-crop=pd.read_csv("Dataset/Crop_recommendation.csv")
+crop=pd.read_csv("MAIN PROGRAM/Dataset/Crop_recommendation.csv")
 
 #Removed label features list
 features=crop.columns.to_list()
