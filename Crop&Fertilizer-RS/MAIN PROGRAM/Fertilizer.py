@@ -11,7 +11,7 @@ warnings.filterwarnings('ignore')
 
 
 # load the dataset
-fertilizer = pd.read_csv("MAIN PROGRAM/Dataset/Fertilizer Prediction.csv")
+fertilizer = pd.read_csv("Dataset/Fertilizer Prediction.csv")
 
 # Only select the numerical columns 
 features = fertilizer.select_dtypes(include=[np.number]).columns.tolist()
