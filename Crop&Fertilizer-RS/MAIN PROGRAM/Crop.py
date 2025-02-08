@@ -11,8 +11,18 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 # Loading The Dataset
-crop=pd.read_csv("Dataset/Crop_recommendation.csv")
+
+# Get the current script's directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construct the full path dynamically
+file_path = os.path.join(current_dir, "Dataset", "Crop_recommendation.csv")
+
+# Load the dataset
+crop = pd.read_csv(file_path)
+
 
 #Removed label features list
 features=crop.columns.to_list()
@@ -110,13 +120,13 @@ def crop_rec(N,P,K,temp,hum,ph,rain):
     return f'{crop} is the best Crop to grow for this condition.\n--------THANKYOU--------\n  '
 
 # #predicting with values
-N=float(input("Enter Nitrogen N: "))
-P=float(input("Enter Phosphorous P: "))
-K=float(input("Enter Potassium K: "))
-temp=float(input("Enter Temperature T(°C): "))
-hum=float(input("Enter Humidity H (%): "))
-ph=float(input("Enter pH Value of Soil ph: "))
-rain=float(input("Enter rainfall (mm): "))
+# N=float(input("Enter Nitrogen N: "))
+# P=float(input("Enter Phosphorous P: "))
+# K=float(input("Enter Potassium K: "))
+# temp=float(input("Enter Temperature T(°C): "))
+# hum=float(input("Enter Humidity H (%): "))
+# ph=float(input("Enter pH Value of Soil ph: "))
+# rain=float(input("Enter rainfall (mm): "))
 
-a=crop_rec(N,P,K,temp,hum,ph,rain)
-print(a)
+# a=crop_rec(N,P,K,temp,hum,ph,rain)
+# print(a)

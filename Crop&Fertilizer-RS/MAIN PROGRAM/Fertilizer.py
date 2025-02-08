@@ -6,12 +6,15 @@ import seaborn as sns
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
+import os
 import warnings
 warnings.filterwarnings('ignore')
 
 
 # load the dataset
-fertilizer = pd.read_csv("Dataset/Fertilizer Prediction.csv")
+current_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(current_dir, "Dataset", "Fertilizer Prediction.csv")
+fertilizer = pd.read_csv(file_path)
 
 # Only select the numerical columns 
 features = fertilizer.select_dtypes(include=[np.number]).columns.tolist()
@@ -82,13 +85,13 @@ def fert_rec(temp,hum,Mois,Stype,Ctype,N,K,P):
 
 # Given input values
 
-temp=float(input("Enter Temperature T(°C): "))
-hum=float(input("Enter Humidity H (%): "))
-Mois = float(input("Enter Moisture M: "))
-Stype = float(input("Enter Soil Type \n1.Sandy\n2.Loamy\n3.Black\n4.Red\n5.Clayey\nST: "))
-Ctype = float(input("Enter Crop Type\n1.Maize\n2.Sugarcane\n3.Cotton\n4.Tobacco\n5.Paddy\n6.Barley\n7.Wheat\n8.MilletsOil seeds\n9.Pulses\n10.Ground Nuts' CT: "))
-N = float(input("Enter Nitrogen N: "))
-K = float(input("Enter Potassium K: "))
-P = float(input("Enter Phosphorous P: "))
-a=fert_rec(temp,hum,Mois,Stype,Ctype,N,K,P)
-print(a)                                                
+# temp=float(input("Enter Temperature T(°C): "))
+# hum=float(input("Enter Humidity H (%): "))
+# Mois = float(input("Enter Moisture M: "))
+# Stype = float(input("Enter Soil Type \n1.Sandy\n2.Loamy\n3.Black\n4.Red\n5.Clayey\nST: "))
+# Ctype = float(input("Enter Crop Type\n1.Maize\n2.Sugarcane\n3.Cotton\n4.Tobacco\n5.Paddy\n6.Barley\n7.Wheat\n8.MilletsOil seeds\n9.Pulses\n10.Ground Nuts' CT: "))
+# N = float(input("Enter Nitrogen N: "))
+# K = float(input("Enter Potassium K: "))
+# P = float(input("Enter Phosphorous P: "))
+# a=fert_rec(temp,hum,Mois,Stype,Ctype,N,K,P)
+# # print(a)                                                
